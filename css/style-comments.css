@@ -2,16 +2,26 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Containers */
-
-.container-wrapper {}
-
-.container-wrapper--red {
-    background-color: #f05f40;
-    color: white;
+/* paddings 0 remove extra space on either side of the sale bar at top of page */
+.alert-container .col-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.alert-container {}
+/* 
+    removes rounded corners from sale bar & makes color less washed out
+    margin-bottom stops it pushing down the nav bar
+*/
+.site-wide-alert {
+    color: #544600;
+    background-color: #eec802;
+    border-color: #eec802;
+    padding: 5px 15px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
 
 .callout-container {
     height: 100vh;
@@ -38,13 +48,15 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* adds vertical spacing to divs with content-container class - quotes & features */
+
 .content-container {
     padding-top: 75px;
     padding-bottom: 75px;
 }
 
 /* Navbar */
-
+    /* z-index needed otherwise navbar hidden behind callout image */
 .navalert-container {
     position: absolute;
     top: 0;
@@ -53,6 +65,8 @@ body {
     padding-left: 0;
     padding-right: 0;
 }
+
+/* overriding basic bootstrap stylings - removing borders & margins */
 
 .navbar {
     margin-bottom: 0;
@@ -111,10 +125,6 @@ body {
     background-color: #f05f40;
 }
 
-.block-divider--white {
-    background-color: white;
-}
-
 .block-divider--short {
     width: 35px;
 }
@@ -142,25 +152,8 @@ body {
     color: white;
 }
 
-/* Alert */
-
-.alert-container .col-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.site-wide-alert {
-    color: #544600;
-    background-color: #eec802;
-    border-color: #eec802;
-    padding: 5px 15px;
-    margin-bottom: 0;
-    border: 1px solid transparent;
-    border-radius: 0;
-}
-
 /* Page Headers */
-
+/* page-header class replaces my-5 vertical spacing class */
 .page-header {
     margin-bottom: 0;
     border-bottom: 0;
@@ -178,12 +171,16 @@ body {
 }
 
 /* Features */
-
+/* each individual feature has the feature class */
 .feature {
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* 
+    don't need to style the icons onto their own line
+    using d-sm-block instead of d-sm-inline places them on their own line instead of inline with the text 
+*/
 .feature i {
     margin-bottom: 20px;
     font-size: 45px;
